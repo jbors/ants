@@ -75,8 +75,9 @@ public class AntBehaviour : MonoBehaviour
         ScentMap.Scent scent = scentMap.GetScentAt(transform.position);
         if (scent != null && !checkedPositions.Contains(scent.foodPosition))
         {
-            state = AntState.FollowTrail;
-            targetFoodPos = scent.foodPosition;
+            //TODO: start following trail
+            
+            //Add positions we already been
             checkedPositions.Add(scent.foodPosition);
         }
     }
@@ -84,14 +85,15 @@ public class AntBehaviour : MonoBehaviour
     void FollowTrail()
     {
         speed = SEARCH_SPEED;
-        MoveTowardLocation(targetFoodPos);
+        //TODO: go to food source
     }
 
     void ReturnToNest()
     {
         speed = RETURN_SPEED;
         if (steps % 4 == 0) MoveTowardLocation(closestNestPos);
-        scentMap.AddScentNeighbours(transform.position, targetFoodPos);
+        
+        //TODO: leave scent trails
     }
 
     void DeliverFood(bool stolen)

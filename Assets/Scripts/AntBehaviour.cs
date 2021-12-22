@@ -91,7 +91,10 @@ public class AntBehaviour : MonoBehaviour
     void ReturnToNest()
     {
         speed = RETURN_SPEED;
-        if (steps % 4 == 0) MoveTowardLocation(closestNestPos);
+        if (steps % 4 == 0)
+        {
+            //TODO: walk back towards nest
+        }
         
         //TODO: leave scent trails
     }

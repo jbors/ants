@@ -75,6 +75,9 @@ public class AntBehaviour : MonoBehaviour
         ScentMap.Scent scent = scentMap.GetScentAt(transform.position);
         if (scent != null && !checkedPositions.Contains(scent.foodPosition))
         {
+            //Set the target food postion
+            targetFoodPos = scent.foodPosition; 
+
             //TODO: start following trail
             
             //Add positions we already been
@@ -86,6 +89,7 @@ public class AntBehaviour : MonoBehaviour
     {
         speed = SEARCH_SPEED;
         //TODO: go to food source
+
     }
 
     void ReturnToNest()
@@ -94,6 +98,7 @@ public class AntBehaviour : MonoBehaviour
         if (steps % 4 == 0)
         {
             //TODO: walk back towards nest
+            
         }
         
         //Leave scent trails

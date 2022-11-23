@@ -96,7 +96,8 @@ public class AntBehaviour : MonoBehaviour
             //TODO: walk back towards nest
         }
         
-        //TODO: leave scent trails
+        //Leave scent trails
+        scentMap.AddScentNeighbours(transform.position, targetFoodPos);
     }
 
     void DeliverFood(bool stolen)
